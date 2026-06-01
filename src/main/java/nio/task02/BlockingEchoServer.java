@@ -25,6 +25,8 @@ public class BlockingEchoServer {
             byte[] buf = new byte[1024];
             int n;
             while ((n = in.read(buf)) != -1) {
+                System.out.println("Количество байт: " + n);
+                System.out.println(new String(buf,0,n ));
                 out.write(buf, 0, n);
                 out.flush();
             }
